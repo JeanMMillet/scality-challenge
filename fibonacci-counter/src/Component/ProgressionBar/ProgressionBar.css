@@ -4,6 +4,8 @@
   background-color: var(--light-green-color);
   border: 0.1rem solid var(--green-color);
   border-radius: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .inside-bar {

@@ -49,7 +49,7 @@ h1 {
 }
 
 h2 {
-  width: 100%;
+  width: 90%;
   text-align: center;
   font-weight: 300;
   font-family: Inter, sans-serif;
@@ -101,7 +101,7 @@ h2 {
 /* COUNTER */
 
 .counter {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: space-between;
   width: 50%;
@@ -128,9 +128,25 @@ h2 {
 .utilities {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 30%;
   margin-left: auto;
   margin-right: auto;
+}
+.utilities button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.utilities button:hover {
+  transition: 300ms;
+  scale: 1.2;
+}
+
+.utilities svg {
+  font-size: 5rem;
+  color: hsl(0, 0%, 29%);
 }
 
 /* fd8144
