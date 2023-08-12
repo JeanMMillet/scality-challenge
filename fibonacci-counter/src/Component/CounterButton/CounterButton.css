@@ -1,0 +1,24 @@
+.counter-button {
+  border-radius: 0.5rem;
+  background: #0AADA6;
+  border: none;
+  cursor: pointer;  
+  height: 100%;
+  width: 2rem;
+}
+
+.counter-button:disabled {
+  filter: grayscale(1);
+  opacity: 70%;
+  cursor: not-allowed;
+}
+
+
+.counter-button svg {
+  color: var(--light-green-color);
+  font-size: 2rem;
+  
+}
+.counter-button path {
+  height: 50%;
+}

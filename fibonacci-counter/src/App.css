@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+:root {
+  --light-green-color:#e4f9f8 ;
+  --green-color: #0aada6;
+  --orange-color: #fd8144;
+  --light-orange-color: #ffe1d2;
+  --primary-font: Inter;
+
+}
+
+* {  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* APP */
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--light-green-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+
+/* TITLE */
+
+h1 {
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+/* SUB TITLE */
+
+.sub-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  color: #636363;
+  margin-bottom: 0.5rem;
+}
+
+.learn-more {
+  cursor: pointer;
+  border-radius: 0.4rem;
+  border: var(--green-color) solid 0.1rem;
+  background-color: transparent;
+  width: 6rem;
+  height: 1.5rem;
+  color: var(--green-color);
+  font-family: var(--primary-font);
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-more span {
+  display: none;
+  opacity: 0%;
+  transition: 1s;
+}
+
+.learn-more:hover {
+  box-shadow: 7rem 0 0  0 var(--green-color) inset;
+  transition: 1s;
+  color: var(--light-green-color);
+  justify-content: space-around;
+  width: 7rem;
+}
+.learn-more:hover span {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  transition: 1s;
+  opacity: 100%;
+}
+
+
+
+
+
+/* COUNTER */
+
+.counter {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  font-family: Inter;
+}
+
+.counter p {
+  font-size: 4rem;
+}
+
+
+
+
+/* PROGRESSION BAR */
+
+.progression-bar {
+  margin-bottom: 4rem;
+  width: 50%;
+}
+
+
+/* UTILITIES */
+
+.utilities {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* fd8144
+0aada6
+#eefcfb */

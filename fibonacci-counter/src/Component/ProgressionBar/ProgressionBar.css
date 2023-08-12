@@ -1,0 +1,13 @@
+.full-bar {
+  height: 0.5rem;
+  width: 100%;
+  background-color: var(--light-green-color);
+  border: 0.1rem solid var(--green-color);
+  border-radius: 0.5rem;
+}
+
+.inside-bar {
+  height: 100%;
+  background-color: var(--green-color);
+  border-radius: 0.5rem;
+}
