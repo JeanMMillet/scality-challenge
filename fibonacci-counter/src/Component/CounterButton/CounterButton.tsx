@@ -17,17 +17,17 @@ const CounterButton: React.FC<CounterButtonProps> = ({
   counter,
 }) => {
   const handleClick = () => {
-    if (type === "increment") {
+    if (type === "increment" && counter + step <= max) {
       setter((prevState) => prevState + step);
-    } else setter((prevState) => prevState - step);
+    } else if (type === "decrement") setter((prevState) => prevState - step);
   };
   return (
     <button
-      className="counter-button"
+      className={`counter-button ${type}`}
       type="button"
       onClick={handleClick}
       disabled={
-        type === "increment" && counter === max
+        type === "increment" && counter + step >= max
           ? true
           : type === "decrement" && counter === 0
           ? true

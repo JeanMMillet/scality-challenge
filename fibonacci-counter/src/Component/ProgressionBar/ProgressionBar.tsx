@@ -7,7 +7,7 @@ interface ProgressionBarProps {
 
 const ProgressionBar: React.FC<ProgressionBarProps> = ({ counter, max }) => {
   return (
-    <div className="full-bar">
+    <div className={ "full-bar"}>
       <div
         className="inside-bar"
         style={{ width: `${(counter / max) * 100}%` }}

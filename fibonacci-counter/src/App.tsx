@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   AiOutlineRight,
   AiOutlineSetting,
@@ -8,9 +8,19 @@ import "./App.css";
 import CounterButton from "./Component/CounterButton/CounterButton";
 import ProgressionBar from "./Component/ProgressionBar/ProgressionBar";
 import AlertBox from "./Component/AlertBox/AlertBox";
+import { createArraysofFibonacciNumbers } from "./Function/FibonacciNumbers";
+import Settings from "./Component/Settings/Settings";
 
 function App() {
   const [counter, setCounter] = useState(0);
+  const [max, setMax] = useState(100);
+  const [step, setStep] = useState(1);
+  const [fibonacciNumbers, setFibonacciNumbers] = useState([0, 1]);
+  const [toggleSetting, setToggleSetting] = useState(false);
+
+  useEffect(() => {
+    setFibonacciNumbers(createArraysofFibonacciNumbers(max));
+  }, [max]);
 
   const handleResetClick = () => {
     setCounter(0);
@@ -23,51 +33,72 @@ function App() {
         <h2>
           This app indicates if the number is included in the Fibonacci sequence
         </h2>
-        <button type="button" className="learn-more">
+        <a
+          className="learn-more"
+          target="_blank"
+          href="https://en.wikipedia.org/wiki/Fibonacci_sequence"
+        >
           Learn more
           <span>
             <AiOutlineRight />
           </span>
-        </button>
+        </a>
       </div>
       <div className="counter">
         <CounterButton
           setter={setCounter}
           counter={counter}
-          step={1}
+          step={step}
           type="decrement"
-          max={10}
+          max={max}
         />
-        <p className="counter-value">{counter}</p>
+        <p
+          className={`counter-value ${
+            fibonacciNumbers.includes(counter) ? "fibonacci-number" : null
+          }`}
+        >
+          {counter}
+        </p>
         <CounterButton
           setter={setCounter}
           counter={counter}
-          step={1}
+          step={step}
           type="increment"
-          max={10}
+          max={max}
         />
       </div>
       <div className="progression-bar">
-        <ProgressionBar counter={counter} max={10} />
-        <AlertBox
-          counter={counter}
-          max={10}
-          step={1}
-          visible={counter === 10 - 2}
-        />
+        <ProgressionBar counter={counter} max={max} />
+        <AlertBox counter={counter} max={max} step={step}>
+          {`Warning ! You will reach the maximum value in 2 increments`}
+        </AlertBox>
       </div>
       <div className="utilities">
         <button
           type="button"
           onClick={handleResetClick}
-          style={counter === 0 ? { opacity: "50%" } : undefined}
+          className="undo"
+          disabled={counter === 0 ? true : false}
         >
           <AiOutlineUndo />
         </button>
-        <button type="button">
+        <button
+          type="button"
+          className="setting"
+          onClick={() => setToggleSetting(!toggleSetting)}
+        >
           <AiOutlineSetting />
         </button>
       </div>
+
+      <Settings
+        max={max}
+        setMax={setMax}
+        setStep={setStep}
+        step={step}
+        counter={counter}
+        show={toggleSetting ? "show" : undefined}
+      />
     </div>
   );
 }

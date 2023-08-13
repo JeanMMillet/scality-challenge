@@ -5,6 +5,9 @@
   cursor: pointer;  
   height: 100%;
   width: 2rem;
+  transition: 300ms;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
 }
 
 .counter-button:disabled {
@@ -21,4 +24,19 @@
 }
 .counter-button path {
   height: 50%;
+}
+
+
+
+
+.counter-button.increment:hover:enabled {
+  transform: translateX(3px);
+  box-shadow: rgba(0, 0, 0, 0.16) -3px 3px 6px, rgba(0, 0, 0, 0.23) -3px 3px 6px;
+  transition: 300ms;
+}
+
+.counter-button.decrement:hover:enabled {
+  transform: translateX(-3px);
+  box-shadow: rgba(0, 0, 0, 0.16) 3px 3px 6px, rgba(0, 0, 0, 0.23) 3px 3px 6px;
+  transition: 300ms;
 }
