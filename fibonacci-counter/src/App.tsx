@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  AiOutlineRight,
-  AiOutlineSetting,
-  AiOutlineUndo,
-} from "react-icons/ai";
+import { AiOutlineSetting, AiOutlineUndo } from "react-icons/ai";
 import "./App.css";
 import CounterButton from "./Component/CounterButton/CounterButton";
 import ProgressionBar from "./Component/ProgressionBar/ProgressionBar";
@@ -31,18 +27,15 @@ function App() {
       <h1 className="title">Fibonacci Indicator</h1>
       <div className="sub-title">
         <h2>
-          This app indicates if the number is included in the Fibonacci sequence
+          This app indicates if the number is included in the{" "}
+          <a
+            target="_blank"
+            href="https://en.wikipedia.org/wiki/Fibonacci_sequence"
+            className="learn-more"
+          >
+            Fibonacci sequence
+          </a>
         </h2>
-        <a
-          className="learn-more"
-          target="_blank"
-          href="https://en.wikipedia.org/wiki/Fibonacci_sequence"
-        >
-          Learn more
-          <span>
-            <AiOutlineRight />
-          </span>
-        </a>
       </div>
       <div className="counter">
         <CounterButton
@@ -97,7 +90,8 @@ function App() {
         setStep={setStep}
         step={step}
         counter={counter}
-        show={toggleSetting ? "show" : undefined}
+        show={toggleSetting ? "show" : ""}
+        setToggleSetting={setToggleSetting}
       />
     </div>
   );

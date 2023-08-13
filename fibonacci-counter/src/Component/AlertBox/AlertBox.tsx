@@ -18,7 +18,7 @@ const AlertBox: React.FC<AlertBoxProps> = ({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(counter === max - 2 * step);
+    setVisible(counter >= max - 2 * step);
     const timeout = setTimeout(() => {
       setVisible(false);
     }, 6000);

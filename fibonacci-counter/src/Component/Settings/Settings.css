@@ -1,9 +1,26 @@
+.setting-window {
+  background-color: var(--light-color-green);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.setting-window.show {
+  display: flex;
+}
+
 .setting-container {
   margin-top: 2rem;
   padding: 1rem;
   background-color: white;
-  width: 30%;
-  height: 30%;
+  width: 60%;
+  height: 60%;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -13,14 +30,14 @@
   font-family: var(--primary-font);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transition: all 500ms;
-  position: absolute;
-  bottom: -10rem;
-  opacity: 0;
 }
-
-.setting-container.show {
-  bottom: 1rem;
-  opacity: 1;
+.setting-container button {
+  align-self: flex-end;
+  /* justify-self: flex-start; */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 2rem;
 }
 
 .setting-container div {

@@ -27,7 +27,7 @@ const CounterButton: React.FC<CounterButtonProps> = ({
       type="button"
       onClick={handleClick}
       disabled={
-        type === "increment" && counter + step >= max
+        type === "increment" && counter >= max
           ? true
           : type === "decrement" && counter === 0
           ? true
