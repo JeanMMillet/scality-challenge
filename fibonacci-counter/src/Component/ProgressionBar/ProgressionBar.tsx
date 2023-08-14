@@ -37,14 +37,19 @@ const ProgressionBar: React.FC<ProgressionBarProps> = ({
         </div>
       </div>
       <div className="indicator">
-        <p className="min">0</p>
-        <span style={{ width: `${(threshold / max) * 100}%` }}></span>
+        <div className="min">
+          <p>0</p>
+        </div>
 
-        <AiOutlineCaretUp />
+        <div style={{ width: "calc(100% - 64px" }}>
+          <div style={{ paddingLeft: `calc(${(threshold / max) * 100}%)` }}>
+            <AiOutlineCaretUp />
+          </div>
+        </div>
 
-        <span style={{ width: `${100 - (threshold / max) * 100}%` }}></span>
-
-        <p className="max">{max}</p>
+        <div className="max">
+          <p>{max}</p>
+        </div>
       </div>
     </>
   );

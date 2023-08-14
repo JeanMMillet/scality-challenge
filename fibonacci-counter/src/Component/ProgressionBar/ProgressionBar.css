@@ -50,17 +50,13 @@
   text-align: end;
 }
 
+.indicator .max {
+  width: 2rem;
+}
+
+.indicator svg {
+  transform: translateX(-50%);
+}
 
 
-@media screen and (max-width: 500px) {
-  .counter {
-    width: 80%;
-  }
-  
-}
-@media screen and (max-width: 1000px) {
-  .counter {
-    width: 70%;
-  }
-  
-}
+

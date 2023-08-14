@@ -34,7 +34,7 @@
 }
 
 .alert-box.block svg, .alert-box.block p {  
-    color: hsl(0, 98%, 43%);
+    color: hsl(0, 80%, 50%);
 }
 
 
@@ -55,11 +55,11 @@
     max-width: 40%;
   }
   .alert-box svg {
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--orange-color);
   }
   .alert-box p {
-    font-size: 1rem;
+    font-size: 3rem;
     
   }
 }
@@ -68,11 +68,10 @@
   .alert-box{
     max-width: 40%;
   }
-  .alert-box svg {
+  .alert-box svg,.alert-box.block svg {
     font-size: 1.8rem;
-    color: var(--orange-color);
   }
-  .alert-box p {
+  .alert-box p, .alert-box.block p {
     font-size: 0.8rem;
     
   }
