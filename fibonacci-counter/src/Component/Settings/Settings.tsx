@@ -46,6 +46,15 @@ const Settings: React.FC<SettingsProps> = ({
           <AiOutlineClose />
         </button>
         <div className="setting-content">
+          <div className="threshold">
+            <label htmlFor="step">Warning Threshold</label>
+            <input
+              type="number"
+              name="warning"
+              value={threshold}
+              onChange={handleChange}
+            />
+          </div>
           <div className="max">
             <label htmlFor="max">Blocking Threshold</label>
             <input
@@ -63,15 +72,6 @@ const Settings: React.FC<SettingsProps> = ({
               type="number"
               name="step"
               value={step}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="threshold">
-            <label htmlFor="step">Warning Threshold</label>
-            <input
-              type="number"
-              name="warning"
-              value={threshold}
               onChange={handleChange}
             />
           </div>

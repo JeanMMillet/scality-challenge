@@ -13,6 +13,12 @@ Your mission is to craft a React application featuring a counter with an increme
 
 **Bonus Challenge**: Design your solution with user experience at the forefront. Consider your solution with adaptability in mind, allowing for easy adjustments to the threshold criteria in the future.
 
+## Technologies Used
+
+- Vite
+- React
+- TypeScript
+
 ## Getting Started
 
 ### Run the project
@@ -36,8 +42,10 @@ npm run test
 - Use keyboard to increase/decrease the counter
 - Settings of the 2 thresholds
 
-## Technologies Used
+## Possible improvements
 
-- Vite
-- React
-- TypeScript
+Features that I wanted to do but didn't have time to
+
+- Store of the counter and settings value in localStorage
+- Add continuous increase/decrease while mouse down
+- Block increase/decrease with key when settings modal is open
