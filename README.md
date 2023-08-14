@@ -1,7 +1,7 @@
 # Fibonacci Counter App
 
 Welcome to the Fibonacci Counter App!
-You can check it out [here](https://scality-challenge-l2lke8nyo-jeanmmillet.vercel.app/ "Fibonacci Counter App" target="\_blank")
+You can check it out [here](https://scality-challenge-l2lke8nyo-jeanmmillet.vercel.app/)
 
 ## Exercise Overview
 
