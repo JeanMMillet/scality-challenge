@@ -1,15 +1,66 @@
+.progression-bar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .full-bar {
   height: 0.5rem;
   width: 100%;
   background-color: var(--light-green-color);
   border: 0.1rem solid var(--green-color);
   border-radius: 0.5rem;
-  position: relative;
-  z-index: 1;
+}
+
+
+
+.full-bar.threshold {
+  border-color: var(--orange-color);
 }
 
 .inside-bar {
   height: 100%;
   background-color: var(--green-color);
   border-radius: 0.5rem;
+}
+
+.inside-bar.threshold {
+  background-color: var(--orange-color);
+}
+
+
+.full-bar.block {
+  border-color: hsl(0, 80%, 50%);
+}
+.inside-bar.block {
+  background-color: hsl(0, 80%, 50%);
+}
+
+.indicator {
+  width: 100%;
+  display: flex;
+  font-family: Inter;
+}
+
+.indicator .min {
+  width: 2rem;
+  text-align: end;
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .counter {
+    width: 80%;
+  }
+  
+}
+@media screen and (max-width: 1000px) {
+  .counter {
+    width: 70%;
+  }
+  
 }

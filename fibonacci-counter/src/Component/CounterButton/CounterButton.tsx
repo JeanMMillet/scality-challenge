@@ -18,11 +18,12 @@ const CounterButton: React.FC<CounterButtonProps> = ({
   counter,
 }) => {
   const canCallIncrementFunction = useRef(true);
+  // const arrowRightInterval = useRef(null);
   const intervalBetweenIncrementAndDecrement = 50;
 
   useEffect(() => {
     function manageArrow(e: KeyboardEvent) {
-      if (e.key === "ArrowRight") {
+      if (e.key === "ArrowRight" && counter < max) {
         // when we arrive here trigger the timer
 
         // console.log("canCallTheFunction.current", canCallTheFunction.current);
@@ -30,7 +31,29 @@ const CounterButton: React.FC<CounterButtonProps> = ({
         if (canCallIncrementFunction.current === true) {
           canCallIncrementFunction.current = false;
           setTimeout(() => {
-            setter(counter + step);
+            setter(() => {
+              if (counter + step > max) {
+                return max;
+              }
+              return counter + step;
+            });
+            canCallIncrementFunction.current = true;
+          }, intervalBetweenIncrementAndDecrement);
+        }
+      } else if (e.key === "ArrowLeft" && counter > 0) {
+        // when we arrive here trigger the timer
+
+        // console.log("canCallTheFunction.current", canCallTheFunction.current);
+
+        if (canCallIncrementFunction.current === true) {
+          canCallIncrementFunction.current = false;
+          setTimeout(() => {
+            setter(() => {
+              if (counter - step < 0) {
+                return 0;
+              }
+              return counter - step;
+            });
             canCallIncrementFunction.current = true;
           }, intervalBetweenIncrementAndDecrement);
         }
@@ -42,12 +65,21 @@ const CounterButton: React.FC<CounterButtonProps> = ({
     return () => {
       window.removeEventListener("keydown", manageArrow);
     };
-  }, [setter, step, counter]);
+  }, [counter, max, setter, step]);
 
   const handleClick = () => {
-    if (type === "increment" && counter + step <= max) {
-      setter((prevState) => prevState + step);
-    } else if (type === "decrement") setter((prevState) => prevState - step);
+    if (type === "increment") {
+      setter((prevState) => {
+        if (prevState + step > max) {
+          return max;
+        } else return prevState + step;
+      });
+    } else if (type === "decrement")
+      setter((prevState) => {
+        if (prevState - step < 0) {
+          return 0;
+        } else return prevState - step;
+      });
   };
   return (
     <button

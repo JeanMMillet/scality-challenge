@@ -4,10 +4,13 @@ import { AiOutlineClose } from "react-icons/ai";
 interface SettingsProps {
   setStep: React.Dispatch<React.SetStateAction<number>>;
   setMax: React.Dispatch<React.SetStateAction<number>>;
+  setThreshold: React.Dispatch<React.SetStateAction<number>>;
   step: number;
   max: number;
   counter: number;
   show: "show" | "";
+  setToggleSetting: React.Dispatch<React.SetStateAction<boolean>>;
+  threshold: number;
 }
 
 const Settings: React.FC<SettingsProps> = ({
@@ -18,6 +21,8 @@ const Settings: React.FC<SettingsProps> = ({
   counter,
   show,
   setToggleSetting,
+  setThreshold,
+  threshold,
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name } = e.target;
@@ -28,6 +33,9 @@ const Settings: React.FC<SettingsProps> = ({
     }
     if (name === "step") {
       setStep(value);
+    }
+    if (name === "warning") {
+      setThreshold(value);
     } else e.preventDefault;
   };
 
@@ -37,28 +45,36 @@ const Settings: React.FC<SettingsProps> = ({
         <button onClick={() => setToggleSetting(false)}>
           <AiOutlineClose />
         </button>
-        <div className="max">
-          <label htmlFor="max">Set the maximum value of your counter</label>
-          <input
-            type="number"
-            name="max"
-            id=""
-            value={max}
-            min={counter}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="step">
-          <label htmlFor="step">
-            Set the step value of the increment and decrement button
-          </label>
-          <input
-            type="number"
-            name="step"
-            id=""
-            value={step}
-            onChange={handleChange}
-          />
+        <div className="setting-content">
+          <div className="max">
+            <label htmlFor="max">Blocking Threshold</label>
+            <input
+              type="number"
+              name="max"
+              id=""
+              value={max}
+              min={counter}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="step">
+            <label htmlFor="step">Step</label>
+            <input
+              type="number"
+              name="step"
+              value={step}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="threshold">
+            <label htmlFor="step">Warning Threshold</label>
+            <input
+              type="number"
+              name="warning"
+              value={threshold}
+              onChange={handleChange}
+            />
+          </div>
         </div>
       </div>
     </div>

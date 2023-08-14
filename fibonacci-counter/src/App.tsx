@@ -10,6 +10,8 @@ import Settings from "./Component/Settings/Settings";
 function App() {
   const [counter, setCounter] = useState(0);
   const [max, setMax] = useState(100);
+  const [warningThreshold, setWarningThreshold] = useState(80);
+
   const [step, setStep] = useState(1);
   const [fibonacciNumbers, setFibonacciNumbers] = useState([0, 1]);
   const [toggleSetting, setToggleSetting] = useState(false);
@@ -61,10 +63,17 @@ function App() {
         />
       </div>
       <div className="progression-bar">
-        <ProgressionBar counter={counter} max={max} />
-        <AlertBox counter={counter} max={max} step={step}>
-          {`Warning ! You will reach the maximum value in 2 increments`}
-        </AlertBox>
+        <ProgressionBar
+          counter={counter}
+          max={max}
+          threshold={warningThreshold}
+        />
+        <AlertBox
+          counter={counter}
+          max={max}
+          step={step}
+          threshold={warningThreshold}
+        />
       </div>
       <div className="utilities">
         <button
@@ -92,6 +101,8 @@ function App() {
         counter={counter}
         show={toggleSetting ? "show" : ""}
         setToggleSetting={setToggleSetting}
+        threshold={warningThreshold}
+        setThreshold={setWarningThreshold}
       />
     </div>
   );

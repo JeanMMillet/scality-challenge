@@ -101,18 +101,7 @@ h2 {
 }
 
 
-@media screen and (max-width: 500px) {
-  .counter {
-    width: 80%;
-  }
-  
-}
-@media screen and (max-width: 800px) {
-  .counter {
-    width: 70%;
-  }
-  
-}
+
 
 
 /* PROGRESSION BAR */
@@ -120,6 +109,10 @@ h2 {
 .progression-bar {
   margin-bottom: 2rem;
   width: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -128,7 +121,7 @@ h2 {
 .utilities {
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 50%;
 }
 .utilities button {
   border: none;
@@ -157,17 +150,32 @@ h2 {
 }
 
 
+
+
 @media screen and (max-width: 500px) {
-  .utilities {
-    width: 40%;
+  h1 {
+    font-size: 1.5rem;
   }
+  .sub-title h2 {
+    font-size: 0.8rem;
+  }
+  .counter, .progression-bar {
+    width: 80%;
+  }
+
   .utilities svg {
     font-size: 3rem;
   }
 }
-
-
-
+@media screen and (max-width: 1000px) {
+  .counter, .progression-bar {
+    width: 70%;
+  }
+  .utilities {
+    width: 60%;
+  }
+  
+}
 
 /* fd8144
 0aada6

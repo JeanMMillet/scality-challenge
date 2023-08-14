@@ -7,7 +7,7 @@
   height: 100%;
   display: none;
   justify-content: center;
-  align-items: center;
+  top: 15%;
 
 }
 
@@ -15,16 +15,18 @@
   display: flex;
 }
 
+
+
 .setting-container {
   margin-top: 2rem;
   padding: 1rem;
   background-color: white;
   width: 60%;
-  height: 60%;
+  height: 50%;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
   font-family: var(--primary-font);
@@ -33,27 +35,53 @@
 }
 .setting-container button {
   align-self: flex-end;
-  /* justify-self: flex-start; */
   border: none;
   background-color: transparent;
   cursor: pointer;
   font-size: 2rem;
 }
 
-.setting-container div {
-  width: 70%;
+.setting-content {
+  width: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
+  font-size: 0.9rem;
+}
+.setting-content div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
-.setting-container div label {
+
+.setting-content div label {
   margin-bottom: 0.5rem;
 }
 
 
-.setting-container div input {
+.setting-content div input {
   border: 0.15rem var(--green-color) solid;
   border-radius: 0.25rem;
   padding: 0.5rem;
   width: 70%;
+  font-size: 1rem;
+}
+
+
+@media screen and (min-width: 800px) {
+  .setting-container {
+    width: 50%;
+  }
+  .setting-content {
+    font-size: 1rem;
+  }
+  
+}
+
+@media screen and (max-width: 700px) {
+  .setting-content div input {
+    font-size: 0.9rem;
+  }
+  
 }
